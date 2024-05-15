@@ -104,7 +104,19 @@ def login():
             elif choice == 2:
                 timing1 = str(input("How many years you want to invest your money"))
                 money = str(input("Please enter the amount of money you would like to deposit"))
-   
+                money = int(money)
+                if d > 50000:
+                    ratex = 3/100
+                elif d > 30000:
+                    ratex = 2/100
+                else: 
+                    ratex = 1.5/100
+                print("Your current balance in" + " " + "timing" + " " + "years will be")
+                print(depositinterest(money,ratex,timing))
+        else:
+            print("Option is not available, back to main menu")
+            login()
+    
     else:
        print("Either of your username or pin is wrong, did you create your account")
        list1 = ["1-yes","2-no"]
