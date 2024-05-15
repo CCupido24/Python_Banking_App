@@ -39,4 +39,21 @@ def depositinterest(p,r,t):
     a =  p * e #Future value of your investment
     return a
 
-print(depositinterest(1000,0.038,6))
+def login():
+    # name1 represent username
+    # pin1 represent user's pin
+    name1 = str(input("Please enter your username"))
+    pin1 = str(input("Please enter your pin"))
+    # Check if the name and pin matched
+    if name1 == name and pin1 == pin:
+        print("Welcome to the online banking application" + " " + name)
+        print("Please choose the menu down here")
+    
+    
+    
+    
+    else:
+       print("Either of your username or pin is wrong, did you create your account")
+       list1 = ["1-yes","2-no"]
+       for i in list:
+           print(i )
