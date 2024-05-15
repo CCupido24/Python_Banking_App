@@ -72,14 +72,39 @@ def login():
                if len(dest) == 8:
                    amount = int(input("Please enter the amount of money that you want to transfer"))
                    if amount > cb:
-                       print("Your current balance is not sufficient for this transaction")
-                       login()                  
+                       print("Your current balance is not sufficient for this transaction")                  
                    else:
                        cb = d - amount
                        print("The transaction of" + " " + str(amount) + " " + "has been transfered to" + " " + str(dest) + " " + " your current balance is" + str(cb))
-               else:
-                   print("The transaction has been rejected since the destination account number is invalid")
-                   login()
+        elif choose == 4:
+            print("Your current balance is" +" "+ str(cb))
+        elif choose == 5:
+            if d > 50000:
+                rate = 3
+            elif d > 30000:
+                rate = 2
+            else:
+                rate = 1.5
+            print("Your current deposit interest rate is" +" "+ str(rate) + " %")
+        elif choose == 6:
+            listoption = ["1-Calculate your deposit compound interest based on your current balance","2-Calculate your deposit compound interest based on your deposit input"]
+            for n in listoption:
+                print(n)
+            choice = int(input("Please enter your choice from the option above"))
+            if choice == 1:
+                timing = str(input("How many years you want to invest your money?"))
+                if d > 50000:
+                    ratex = 3/100
+                elif d > 30000:
+                    ratex = 2/100
+                else: 
+                    ratex = 1.5/100
+                print("Your current balance in" + " " + "timing" + " " + "years will be")
+                print(depositinterest(cb,ratex,timing))
+            elif choice == 2:
+                timing1 = str(input("How many years you want to invest your money"))
+                money = str(input("Please enter the amount of money you would like to deposit"))
+   
     else:
        print("Either of your username or pin is wrong, did you create your account")
        list1 = ["1-yes","2-no"]
