@@ -73,9 +73,13 @@ def login():
                    amount = int(input("Please enter the amount of money that you want to transfer"))
                    if amount > cb:
                        print("Your current balance is not sufficient for this transaction")
+                       login()                  
                    else:
                        cb = d - amount
                        print("The transaction of" + " " + str(amount) + " " + "has been transfered to" + " " + str(dest) + " " + " your current balance is" + str(cb))
+               else:
+                   print("The transaction has been rejected since the destination account number is invalid")
+                   login()
     else:
        print("Either of your username or pin is wrong, did you create your account")
        list1 = ["1-yes","2-no"]
