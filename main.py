@@ -26,3 +26,17 @@ def forgotpin():
     else:
         print("The new pin has been stored, please log in")
         pin = recoverpin
+        
+        
+def depositinterest(p,r,t):
+    # A = Pe^(rt) which is the formula for calculating the compound interest
+    p = float(p)
+    r = float(r)
+    t = float(t)
+    rt = r * t
+    e = math.exp(rt)
+    #Calculation
+    a =  p * e #Future value of your investment
+    return a
+
+print(depositinterest(1000,0.038,6))
