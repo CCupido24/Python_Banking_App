@@ -48,12 +48,35 @@ def login():
     if name1 == name and pin1 == pin:
         print("Welcome to the online banking application" + " " + name)
         print("Please choose the menu down here")
-    
+        listmenu = ["1-Deposit","2-Withdraw","3-Transfer","4-Check","5-Deposit interest rate","6-Calculate compound interest"]
+        for b in listmenu:
+            print(b)
+        choose = int(input("Please enter the number of your chose"))
+        d = 0
+        w = 0
+        cb = 0
     
     
     
     else:
        print("Either of your username or pin is wrong, did you create your account")
        list1 = ["1-yes","2-no"]
-       for i in list:
-           print(i )
+       for i in list1:
+           print(i)
+    inp = int(input("Enter your choice below"))
+    if inp == 1:
+        list2 = ["1-do you want to attempt to log in again?", "2-You forgot your pin?"]
+        for e in list2:
+            print(e)
+        theanswer = str(input("Please enter your choice"))
+        theanswer = int(theanswer)
+        if theanswer == 1:
+            login()
+        elif theanswer == 2:
+            forgotpin()
+        else:
+            print("Option is not available")
+            login()
+    elif inp == 2:
+        print("Please create your account")
+        signin()
