@@ -52,12 +52,22 @@ def login():
         for b in listmenu:
             print(b)
         choose = int(input("Please enter the number of your chose"))
-        d = 0
-        w = 0
-        cb = 0
-    
-    
-    
+        d = 0 # d represents deposit
+        w = 0 # w represents withdraw
+        cb = 0 # cb represents current balance
+        if choose == 1:
+            d = int(input("Enter the amount of your deposit"))
+            cb = d
+            print("Your current balance is" +" "+ str(cb))
+        elif choose == 2:
+            w = int(input("Enter the amount you wish to withdraw"))
+            if w > cb:
+                print("Your current balance is not sufficient for this transaction")
+                login()
+            else:
+                cb = d -w 
+                print(str(w) +" "+ "has been withdrawn from your account" +" "+ " and your current balance is" + " " + str(cb))
+                
     else:
        print("Either of your username or pin is wrong, did you create your account")
        list1 = ["1-yes","2-no"]
