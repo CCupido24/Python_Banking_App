@@ -67,7 +67,15 @@ def login():
             else:
                 cb = d -w 
                 print(str(w) +" "+ "has been withdrawn from your account" +" "+ " and your current balance is" + " " + str(cb))
-                
+        elif choose == 3:
+               dest = str(input("Please enter the account number of your destination in 8 digitis"))
+               if len(dest) == 8:
+                   amount = int(input("Please enter the amount of money that you want to transfer"))
+                   if amount > cb:
+                       print("Your current balance is not sufficient for this transaction")
+                   else:
+                       cb = d - amount
+                       print("The transaction of" + " " + str(amount) + " " + "has been transfered to" + " " + str(dest) + " " + " your current balance is" + str(cb))
     else:
        print("Either of your username or pin is wrong, did you create your account")
        list1 = ["1-yes","2-no"]
